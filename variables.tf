@@ -6,6 +6,7 @@ variable "aws_region" {
 variable "vpc_id" {
   description = "VPC"
   default     =  "vpc-0dfe935fef5090189"
+}
 
 variable "key_name" {
   description = " SSH keys to connect to ec2 instance"
