@@ -49,7 +49,7 @@ resource "aws_instance" "myFirstInstance" {
   instance_type = var.instance_type
   security_groups= [var.security_group]
   vpc_security_group_ids = ["${aws_security_group.my_security_group.id}"]
-  subnet_id = "${element(data.aws_subnet_ids.private.ids, count.index)}"
+  subnet_id = "subnet-008dfa04dc603a5d7"
   tags= {
     Name = var.tag_name
   }
