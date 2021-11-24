@@ -34,6 +34,14 @@ resource "aws_security_group" "my_security_group" {
   }
 }
 
+data "aws_subnet_ids" "private" {
+  vpc_id = "${var.vpc_id}"
+
+  tags = {
+    Tier = "Private"
+  }
+}
+
 # Create AWS ec2 instance
 resource "aws_instance" "myFirstInstance" {
   ami           = var.ami_id
@@ -42,6 +50,7 @@ resource "aws_instance" "myFirstInstance" {
   security_groups= [var.security_group]
   subnet_id = "subnet-008dfa04dc603a5d7"
   vpc_security_group_ids = ["${aws_security_group.my_security_group.id}"]
+  subnet_id     = "${element(data.aws_subnet_ids.private.ids, count.index)}"
   tags= {
     Name = var.tag_name
   }
