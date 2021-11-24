@@ -49,7 +49,6 @@ data "aws_subnet" "selected" {
 
 # Create AWS ec2 instance
 resource "aws_instance" "myFirstInstance" {
-  vpc_id = var.vpc_id
   ami           = var.ami_id
   key_name = var.key_name
   instance_type = var.instance_type
