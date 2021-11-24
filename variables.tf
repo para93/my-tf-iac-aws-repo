@@ -3,6 +3,10 @@ variable "aws_region" {
   default     = "us-east-2"
 }
 
+variable "vpc_id" {
+  description = "VPC"
+  default     =  "vpc-0dfe935fef5090189"
+
 variable "key_name" {
   description = " SSH keys to connect to ec2 instance"
   default     =  "mchung-dell-pem"
