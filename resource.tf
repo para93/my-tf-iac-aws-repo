@@ -1,5 +1,5 @@
 resource "aws_instance" "ubuntu" {
-  ami           = "ami-a1b2c3d4"
+  ami           = "ami-0629230e074c580f2"
   instance_type = "t2.micro"
-  subnet_id = "subnet-013ko113cee1f7798"
+  subnet_id = "subnet-008dfa04dc603a5d7"
 }
