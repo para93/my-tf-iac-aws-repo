@@ -8,6 +8,11 @@ variable "vpc_id" {
   default     =  "vpc-0dfe935fef5090189"
 }
 
+variable "subnet_id" {
+  description = "VPC Subnet"
+  default     =  "subnet-008dfa04dc603a5d7"
+}
+
 variable "key_name" {
   description = " SSH keys to connect to ec2 instance"
   default     =  "mchung-dell-pem"
